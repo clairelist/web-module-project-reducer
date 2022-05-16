@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {initialState as initialValues} from '../reducers';
 
 import './App.css';
 
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
+//can I pass value in to our click handlers instead of the actual number? for below,
+//value={1}; onClick=handleClick(value)
+
 function App() {
+
+  const [values, dispatch, setValues] = useState(initialValues);
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -16,10 +23,10 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={0}/>
+            <TotalDisplay value={initialValues.total}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> X</span>
-              <span id="memory"><b>Memory:</b> 0</span>
+              <span id="operation"><b>Operation:</b> {initialValues.operation} </span>
+              <span id="memory"><b>Memory:</b> {initialValues.memory} </span>
             </div>
             
             <div className="row">
