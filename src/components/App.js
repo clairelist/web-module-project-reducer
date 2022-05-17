@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {initialState as initialValues} from '../reducers';
+import React, { useReducer } from 'react';
+import reducer, {initialState as initialValues} from '../reducers';
 
 import './App.css';
 
@@ -11,7 +11,7 @@ import CalcButton from './CalcButton';
 
 function App() {
 
-  const [values, dispatch, setValues] = useState(initialValues);
+  const [state, dispatch] = useReducer(reducer, initialValues); //we use the useReducer hook, not the useState hook because that way we can pass the reducer AND values to it!! This means we can actually call our reducer!
 
   return (
     <div className="App">
@@ -23,10 +23,10 @@ function App() {
         <div className="col-md-12 d-flex justify-content-center">
           <form name="Cal">
             
-            <TotalDisplay value={initialValues.total}/>
+            <TotalDisplay value={state.total}/>
             <div className="row details">
-              <span id="operation"><b>Operation:</b> {initialValues.operation} </span>
-              <span id="memory"><b>Memory:</b> {initialValues.memory} </span>
+              <span id="operation"><b>Operation:</b> {state.operation} </span>
+              <span id="memory"><b>Memory:</b> {state.memory} </span>
             </div>
             
             <div className="row">
