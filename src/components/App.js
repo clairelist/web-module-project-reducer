@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer, { initialState as initialValues } from '../reducers';
-import { applyNumber, changeOperation, clearDisplay } from '../actions'; //the FUNCTION, not just the constant !
+import { applyNumber, changeOperation, clearDisplay, memSet } from '../actions'; //the FUNCTION, not just the constant !
 
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
@@ -27,6 +27,10 @@ function App() {
     dispatch(clearDisplay());
   }
 
+  const handleMemSet = () => {
+    dispatch(memSet());
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -44,7 +48,7 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
+              <CalcButton value={"MS"} onClick={()=> handleMemSet() }/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
