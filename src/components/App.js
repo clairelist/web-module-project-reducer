@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import reducer, {initialState as initialValues} from '../reducers';
+import {addOne} from '../actions'; //the FUNCTION, not just the constant !
 
 import './App.css';
 
@@ -12,6 +13,10 @@ import CalcButton from './CalcButton';
 function App() {
 
   const [state, dispatch] = useReducer(reducer, initialValues); //we use the useReducer hook, not the useState hook because that way we can pass the reducer AND values to it!! This means we can actually call our reducer!
+  
+  const handleOneClick = () => {
+    dispatch(addOne());
+  }
 
   return (
     <div className="App">
@@ -36,7 +41,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton value={1} onClick={handleOneClick}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
