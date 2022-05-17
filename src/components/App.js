@@ -1,21 +1,23 @@
 import React, { useReducer } from 'react';
-import reducer, {initialState as initialValues} from '../reducers';
-import {addOne} from '../actions'; //the FUNCTION, not just the constant !
+import reducer, { initialState as initialValues } from '../reducers';
+import { applyNumber } from '../actions'; //the FUNCTION, not just the constant !
 
 import './App.css';
 
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 
-//can I pass value in to our click handlers instead of the actual number? for below,
-//value={1}; onClick=handleClick(value)
-
 function App() {
 
+  
   const [state, dispatch] = useReducer(reducer, initialValues); //we use the useReducer hook, not the useState hook because that way we can pass the reducer AND values to it!! This means we can actually call our reducer!
   
-  const handleOneClick = () => {
-    dispatch(addOne());
+  // const handleOneClick = () => {
+  //   dispatch(addOne());
+  // }
+
+  const handleNumClick = (number) => {
+    dispatch(applyNumber(number));
   }
 
   return (
@@ -41,21 +43,23 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={handleOneClick}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} onClick={ (e)=> handleNumClick(e.target.value) } />
+              {/*THIS MUST BE A FUNCTION DEFINITION, NOT AN EXECUTION, OTHERWISE BAD THINGS WILL HAPPEN TO OUR BELOVED APP !*/}
+              {/*Must capture the event target to use value like this !*/}
+              <CalcButton value={2} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={3} onClick={ (e)=> handleNumClick(e.target.value) } />
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={5} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={6} onClick={ (e)=> handleNumClick(e.target.value) } />
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={8} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={9} onClick={ (e)=> handleNumClick(e.target.value) } />
             </div>
 
             <div className="row">
