@@ -4,6 +4,7 @@ import {
     CHANGE_OPERATION, 
     CLEAR_DISPLAY,
     MEM_SET,
+    MEM_READ,
      } from './../actions';
 
 export const initialState = {
@@ -55,6 +56,12 @@ const reducer = (state, action) => {
             ...state,
             memory: state.total
         });
+
+        case(MEM_READ):
+        return({
+            ...state,
+            total: calculateResult(state.total, state.memory, state.operation)
+        }); //'click MR to add memory value to total' ?
             
         default:
             return state;

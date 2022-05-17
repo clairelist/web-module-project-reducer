@@ -3,6 +3,7 @@ export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const MEM_SET = "MEM_SET";
+export const MEM_READ = "MEM_READ";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -22,4 +23,8 @@ export const clearDisplay = () => {
 
 export const memSet = () => {
     return({type:MEM_SET});
+}
+
+export const memRead = () => {
+    return({type:MEM_READ});
 }
