@@ -5,6 +5,7 @@ import {
     CLEAR_DISPLAY,
     MEM_SET,
     MEM_READ,
+    MEM_RESET,
      } from './../actions';
 
 export const initialState = {
@@ -61,7 +62,13 @@ const reducer = (state, action) => {
         return({
             ...state,
             total: calculateResult(state.total, state.memory, state.operation)
-        }); //'click MR to add memory value to total' ?
+        });
+
+        case(MEM_RESET):
+        return({
+            ...state,
+            memory: 0
+        })
             
         default:
             return state;

@@ -92,8 +92,8 @@ export const initialState = {
 > *Congratulations! You have gone through the entire process for adding an action to your app! Now, see if you can follow the same process (reducer case => action creator => UI connection) for the following app features. IN EACH CASE, ALWAYS TEST THAT YOUR FEATURE WORKS BEFORE PROCEEDING FORWARD.*
 
 * [X] When `M+` is pressed, the current memory value should be set to the current total value. Test by seeing the result of memory in the UI.
-* [ ] When `MR` is pressed, the current memory value should be applied to the current total value(See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
-* [ ] When `MC` is pressed, the current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
+* [X] When `MR` is pressed, the current memory value should be applied to the current total value(See the APPLY_NUMBER case). Test by adding a value to memory and then seeing if the total updates correctly when pressed.
+* [X] When `MC` is pressed, the current memory value should be set to zero. Test by adding a value to memory and then seeing the memory value reset to zero when pressed.
 
 
 ### Task 3: Stretch goals
@@ -107,7 +107,7 @@ DIGIT || NUMBER
 
 
 ### Submission Format
-- [ ] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
-- [ ] Connect your fork to Codegrade using the "Connect Git" button.
-- [ ] Find your newly created fork from the list and push your work to main.
-- [ ] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
+- [X] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
+- [X] Connect your fork to Codegrade using the "Connect Git" button.
+- [X] Find your newly created fork from the list and push your work to main.
+- [X] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ

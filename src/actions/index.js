@@ -4,6 +4,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const MEM_SET = "MEM_SET";
 export const MEM_READ = "MEM_READ";
+export const MEM_RESET = "MEM_RESET";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -27,4 +28,8 @@ export const memSet = () => {
 
 export const memRead = () => {
     return({type:MEM_READ});
+}
+
+export const memReset = () => {
+    return({type:MEM_RESET});
 }
