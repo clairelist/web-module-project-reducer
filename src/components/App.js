@@ -46,23 +46,23 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={1} onClick={ ()=> handleNumClick(1) } />
               {/*THIS MUST BE A FUNCTION DEFINITION, NOT AN EXECUTION, OTHERWISE BAD THINGS WILL HAPPEN TO OUR BELOVED APP !*/}
-              {/*Must capture the event target to use value like this !*/}
-              <CalcButton value={2} onClick={ (e)=> handleNumClick(e.target.value) } />
-              <CalcButton value={3} onClick={ (e)=> handleNumClick(e.target.value) } />
+              {/*If you try to capture e.target.value it breaks addition, so don't do that ! I tried to be clever...*/}
+              <CalcButton value={2} onClick={ ()=> handleNumClick(2) } />
+              <CalcButton value={3} onClick={ ()=> handleNumClick(3) } />
             </div>
 
             <div className="row">
-              <CalcButton value={4} onClick={ (e)=> handleNumClick(e.target.value) } />
-              <CalcButton value={5} onClick={ (e)=> handleNumClick(e.target.value) } />
-              <CalcButton value={6} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={4} onClick={ ()=> handleNumClick(4) } />
+              <CalcButton value={5} onClick={ ()=> handleNumClick(5) } />
+              <CalcButton value={6} onClick={ ()=> handleNumClick(6) } />
             </div>
 
             <div className="row">
-              <CalcButton value={7} onClick={ (e)=> handleNumClick(e.target.value) } />
-              <CalcButton value={8} onClick={ (e)=> handleNumClick(e.target.value) } />
-              <CalcButton value={9} onClick={ (e)=> handleNumClick(e.target.value) } />
+              <CalcButton value={7} onClick={ ()=> handleNumClick(7) } />
+              <CalcButton value={8} onClick={ ()=> handleNumClick(8) } />
+              <CalcButton value={9} onClick={ ()=> handleNumClick(9) } />
             </div>
 
             <div className="row">
